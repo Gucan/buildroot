@@ -67,3 +67,5 @@ BR2_PACKAGE_PYTHON3_SSL=y
 BR2_PACKAGE_PYTHON3_SQLITE=y
 BR2_PACKAGE_PYTHON3_ZLIB=y
 BR2_PRIMARY_SITE="https://sources.buildroot.net"
+BR2_KERNEL_MIRROR="http://mirrors.ustc.edu.cn/kernel.org"
+BR2_GNU_MIRROR="http://mirrors.ustc.edu.cn/gnu"
