@@ -1,0 +1,25 @@
+From b6195085e120b2497bfc335aaada70e4c20628aa Mon Sep 17 00:00:00 2001
+From: Gucan <727771028@qq.com>
+Date: Thu, 28 Mar 2024 20:45:16 +0800
+Subject: [PATCH] fix error in compiletime_assert
+
+---
+ include/linux/compiler.h | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+diff --git a/include/linux/compiler.h b/include/linux/compiler.h
+index 5e88e7e33..034b0a644 100644
+--- a/include/linux/compiler.h
++++ b/include/linux/compiler.h
+@@ -347,7 +347,7 @@ static inline void *offset_to_ptr(const int *off)
+  * compiler has support to do so.
+  */
+ #define compiletime_assert(condition, msg) \
+-	_compiletime_assert(condition, msg, __compiletime_assert_, __LINE__)
++	_compiletime_assert(condition, msg, __compiletime_assert_, __COUNTER__)
+ 
+ #define compiletime_assert_atomic_type(t)				\
+ 	compiletime_assert(__native_word(t),				\
+-- 
+2.34.1
+
